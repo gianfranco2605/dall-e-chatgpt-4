@@ -1,4 +1,4 @@
-// FILE WITH FUNCTIONS TO REUSE
+import FileSaver from "file-saver";// FILE WITH FUNCTIONS TO REUSE
 import { surpriseMePrompts } from "../constants";
 
 
@@ -9,4 +9,8 @@ export function getRandomPrompt(prompt) {
     if (randomPrompt === prompt) return getRandomPrompt(prompt);
 
     return randomPrompt;
+}
+
+export async function downloadImage(_id, photo) {
+    FileSaver.saveAs(photo, `download-${_id}.jpg`);
 }
